@@ -1,19 +1,56 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "create-redux-app",
+  "description": "Boilerplate for react/redux apps using codeBelt's structure from 'My Awesome React/Redux Structure'.",
+  "maintainers": [
+    {
+      "name": "badimihai",
+      "email": "mihai.badila.dev@gmail.com"
+    }
+  ],
+  "keywords": [
+    "react",
+    "redux",
+    "starter",
+    "boilerplate",
+    "sass"
+  ],
+  "author": {
+    "name": "Mihai Badila"
+  },
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "connected-react-router": "^6.8.0",
+    "craco": "^0.0.3",
+    "cross-env": "^7.0.2",
+    "history": "^5.0.0",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-redux": "^7.2.1",
+    "react-router": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-freeze": "^0.1.7",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "sjs-base-model": "^1.9.1",
+    "uuid": "^8.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "---------- DEVELOPMENT ---------------------------------------------------------------------------------": "",
+    "start": "cross-env CLIENT_ENV=developement craco start",
+    "prod": "cross-env CLIENT_ENV=production craco start",
+    "---------- PRODUCTION ----------------------------------------------------------------------------------": "",
+    "build": "cross-env CLIENT_ENV=production craco build",
+    "predeploy": "react-scripts build",
+    "---------- TESTING -------------------------------------------------------------------------------------": "",
+    "test": "cross-env CLIENT_ENV=test craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
