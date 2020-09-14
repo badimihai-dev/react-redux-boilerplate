@@ -13,7 +13,8 @@ const RequestMethod = {
 
 export default class HttpUtility {
   static async get(endpoint, params, requestConfig) {
-    const paramsConfig = params ? { ...params } : undefined;
+    console.log(endpoint);
+    const paramsConfig = params ? { params } : undefined;
 
     return HttpUtility._request(
       {
@@ -82,7 +83,7 @@ export default class HttpUtility {
       ]);
 
       const { status, data, request } = axiosResponse;
-      
+
       if (data.success === false) {
         return HttpUtility._fillInErrorWithDefaults(
           {
@@ -173,7 +174,7 @@ export default class HttpUtility {
    * @returns {Promise<unknown>}
    * @private
    */
-  static _delay(duration = 1500) {
+  static _delay(duration = 250) {
     return new Promise((resolve) => setTimeout(resolve, duration));
   }
 }

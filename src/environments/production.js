@@ -5,7 +5,7 @@ import environment from "./base";
  * You shouldn't have override anything.
  */
 
-const baseApi = "https://europe-west2-ourmenuapp-ccef5.cloudfunctions.net/api"; //?? to be added
+const baseApi = ""; //?? to be added
 const env = environment(baseApi);
 
 const developmentEnv = {

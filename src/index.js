@@ -13,7 +13,7 @@ import environment from "environment";
   });
   const store = rootStore(initialState, history);
 
-  const rootEl = document.getElementById("App");
+  const rootEl = document.getElementById("root");
   const render = (Component, el) => {
     ReactDOM.render(
       <Provider store={store}>

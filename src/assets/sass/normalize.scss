@@ -7,7 +7,6 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import "../fonts/fonts.scss";
 
 * {
   box-sizing: border-box;
@@ -55,8 +54,7 @@ h1 {
    * 2. Show the overflow in Edge and IE.
    */
 
-hr {
-  /* 1 */
+hr { /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
@@ -244,8 +242,7 @@ fieldset {
    *    `fieldset` elements in all browsers.
    */
 
-legend {
-  /* 1 */
+legend {/* 1 */
   color: inherit; /* 2 */
   display: table; /* 1 */
   max-width: 100%; /* 1 */

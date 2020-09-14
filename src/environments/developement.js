@@ -1,6 +1,6 @@
 import environment from "./base";
 
-const baseApi = "http://localhost:5000/ourmenuapp-ccef5/europe-west2/api";
+const baseApi = "";
 const env = environment(baseApi);
 
 const developmentEnv = {

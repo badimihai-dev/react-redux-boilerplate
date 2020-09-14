@@ -3,11 +3,7 @@ export default function baseEnv(baseApi) {
     route: {
       baseRoute: "/",
     },
-    api: {
-      restaurant: `${baseApi}/restaurant`,
-      category: `${baseApi}/restaurant/category`,
-    },
-    localStorage: { guestTokenExpiry: 21600000 },
+    api: {},
     isProduction: true,
     isDevelopment: false,
     isTesting: false,
