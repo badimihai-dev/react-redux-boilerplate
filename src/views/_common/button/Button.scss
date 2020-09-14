@@ -1,0 +1,27 @@
+@import "../../../assets/sass/typography.scss";
+@import "../../../assets/sass/variables.scss";
+
+.button-component {
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-size: 25px;
+  padding: 8px 10px;
+
+  &.sign-in {
+    color: $primary-color;
+  }
+  &.assign-to {
+    padding: 5px 15px;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    font-size: 16px;
+    font-weight: 600;
+
+    &.my-tables {
+      border: 2px solid $highlight-color;
+      color: $highlight-color;
+    }
+  }
+}

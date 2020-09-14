@@ -1,0 +1,58 @@
+@import "../../../assets/sass/typography.scss";
+@import "../../../assets/sass/variables.scss";
+
+.navbar-component {
+  background-color: $highlight-color;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  color: $light-color;
+  padding: 13px;
+
+  &.left {
+    .button:first-child {
+      text-decoration: underline;
+      &::before {
+        content: "";
+        right: 2px;
+        border-right: 10px solid $light-color;
+      }
+    }
+  }
+  &.right {
+    .button:last-child {
+      text-decoration: underline;
+      &::before {
+        content: "";
+        left: 2px;
+        border-left: 10px solid $light-color;
+      }
+    }
+  }
+
+  .button {
+    position: relative;
+    flex: 1;
+    font-size: 18px;
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &:first-child {
+      border-right: 1px solid $light-color;
+    }
+    &:last-child {
+      border-left: 1px solid $light-color;
+    }
+    &::before {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+  }
+}

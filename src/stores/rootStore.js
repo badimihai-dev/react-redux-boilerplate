@@ -2,14 +2,14 @@ import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
 import { routerMiddleware } from "connected-react-router";
-import reduxFreeze from "redux-freeze";
-import environment from "environment";
+// import reduxFreeze from "redux-freeze";
+// import environment from "environment";
 import rootReducer from "./rootReducer";
 import errorToastMiddleware from "../middlewares/errorToastMiddleware";
 
 export default (initialState, history) => {
   const middleware = [
-    environment.isDevelopment ? reduxFreeze : null,
+    // environment.isDevelopment ? reduxFreeze : null,
     thunk,
     routerMiddleware(history),
     errorToastMiddleware(),
@@ -21,7 +21,19 @@ export default (initialState, history) => {
     composeWithDevTools(applyMiddleware(...middleware))
   );
 
-  store.subscribe(() => console.log(store.getState()));
+  const saveToLocalStorage = (state) => {
+    try {
+      const serializedState = JSON.stringify(state.order);
+      localStorage.setItem("ORDER", serializedState);
+    } catch (err) {
+      // ignore error
+    }
+  };
+
+  store.subscribe(() => {
+    saveToLocalStorage(store.getState());
+    console.log(store.getState());
+  });
 
   return store;
 };
